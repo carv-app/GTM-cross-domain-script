@@ -30,7 +30,7 @@
         ensureUserIsSet(timeout).then(function () {
             console.log("Getting ready to decorate");
             var domainsToDecorate = [
-                'foo.com', 'anotherdomain.com' //add or remove domains (without https or trailing slash)
+                'carv.com', //add or remove domains (without https or trailing slash)
             ],
                 queryParams = [
                     'utm_campaign', //add or remove query parameters you want to transfer
@@ -60,7 +60,7 @@
                 }
                 var ampDeviceId = amplitudeGTM.getDeviceId();
                 console.log("Amplitude Device ID= " + ampDeviceId);
-                collectedQueryParams.push('deviceId=' + ampDeviceId);
+                collectedQueryParams.push('amp_device_id=' + ampDeviceId);
                 return urlToDecorate + collectedQueryParams.join('&');
             }
             // borrowed from https://stackoverflow.com/questions/831030/
